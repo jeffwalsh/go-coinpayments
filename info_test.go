@@ -3,7 +3,7 @@ package coinpayments_test
 import (
 	"testing"
 
-	"github.com/jeffwalsh/coinpayments"
+	"github.com/jeffwalsh/go-coinpayments"
 )
 
 func TestCallGetBasicInfo(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/jeffwalsh/coinpayments"
+	"github.com/jeffwalsh/go-coinpayments"
 )
 
 func TestCallCreateTransfer(t *testing.T) {

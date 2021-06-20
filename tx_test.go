@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jeffwalsh/coinpayments"
+	"github.com/jeffwalsh/go-coinpayments"
 )
 
 func TestCallGetTxInfo(t *testing.T) {
