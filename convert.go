@@ -19,7 +19,6 @@ type ConvertLimitResponse struct {
 
 // CallGetConversionLimits calls the get conversion limits comand on the API
 func (c *Client) CallGetConversionLimits(req *ConvertLimitRequest) (*ConvertLimitResponse, error) {
-
 	data := url.Values{}
 	data.Add("from", req.From)
 	data.Add("to", req.To)

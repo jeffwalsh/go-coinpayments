@@ -1,6 +1,5 @@
 package coinpayments_test
 
-
 import (
 	"testing"
 
@@ -17,5 +16,4 @@ func TestCallBalances(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not call balances %s", err.Error())
 	}
-
 }

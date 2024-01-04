@@ -7,7 +7,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -88,16 +87,16 @@ type Client struct {
 
 // SupportedCommands returns a slice of strings with all the available commands
 func SupportedCommands() []string {
-	return []string{CmdCreateTransaction, 
-		CmdGetBasicInfo, 
-		CmdRates, 
-		CmdBalances, 
-		CmdGetCallbackAddress, 
-		CmdGetDepositAddress, 
-		CmdGetTxInfo, 
-		CmdGetTxInfoMulti, 
-		CmdGetTxList, 
-		CmdCreateTransfer, 
+	return []string{CmdCreateTransaction,
+		CmdGetBasicInfo,
+		CmdRates,
+		CmdBalances,
+		CmdGetCallbackAddress,
+		CmdGetDepositAddress,
+		CmdGetTxInfo,
+		CmdGetTxInfoMulti,
+		CmdGetTxList,
+		CmdCreateTransfer,
 		CmdGetConversionLimits,
 	}
 }
@@ -120,7 +119,7 @@ func NewClient(cfg *Config, httpClient HTTPClient) (*Client, error) {
 }
 
 func (c *Client) unmarshal(reader io.Reader, req interface{}) error {
-	body, err := ioutil.ReadAll(reader)
+	body, err := io.ReadAll(reader)
 	if err != nil {
 		return err
 	}
@@ -187,7 +186,7 @@ func (c *Client) call(cmd string, data url.Values, responseStruct interface{}) e
 		return errors.New(ret)
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 
 	if err != nil {
 		return err

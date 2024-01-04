@@ -2,7 +2,7 @@ package coinpayments
 
 import (
 	"io"
-	"io/ioutil"
+
 	"net/url"
 )
 
@@ -26,7 +26,7 @@ type IPNDepositResponse struct {
 // IE: cps.HandleIPNDeposit(req.Body)
 func (c *Client) HandleIPNDeposit(reader io.Reader) (*IPNDepositResponse, error) {
 
-	body, err := ioutil.ReadAll(reader)
+	body, err := io.ReadAll(reader)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ type IPNAPIResponse struct {
 // HandleIPNAPI handles the IPN API on input and gives a response
 func (c *Client) HandleIPNAPI(reader io.Reader) (*IPNAPIResponse, error) {
 
-	body, err := ioutil.ReadAll(reader)
+	body, err := io.ReadAll(reader)
 	if err != nil {
 		return nil, err
 	}
