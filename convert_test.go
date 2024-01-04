@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jeffwalsh/go-coinpayments"
+	"github.com/tryvium-travels/go-coinpayments"
 )
 
 func TestCallGetConversionLimits(t *testing.T) {
